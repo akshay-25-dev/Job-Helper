@@ -15,8 +15,9 @@ export const useAuth = () => {
         try {
             const data = await login({ email, password })
             setUser(data.user)
+            return { success: true }
         } catch (err) {
-
+            return { success: false, message: err.message || "Login failed" }
         } finally {
             setLoading(false)
         }
@@ -27,8 +28,9 @@ export const useAuth = () => {
         try {
             const data = await register({ username, email, password })
             setUser(data.user)
+            return { success: true }
         } catch (err) {
-
+            return { success: false, message: err.message || "Registration failed" }
         } finally {
             setLoading(false)
         }
@@ -53,7 +55,9 @@ export const useAuth = () => {
 
                 const data = await getMe()
                 setUser(data.user)
-            } catch (err) { } finally {
+            } catch (err) {
+                // Not logged in — this is expected, no action needed
+            } finally {
                 setLoading(false)
             }
         }

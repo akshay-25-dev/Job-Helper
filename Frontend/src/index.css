@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Color Palette ─────────────────────────────────── */
+  --color-page: #0d1117;
+  --color-card: #161b22;
+  --color-panel: #1c2230;
+  --color-input: #1e2535;
+  --color-border: #2a3348;
+  --color-txt: #e6edf3;
+  --color-muted: #7d8590;
+  --color-accent: #ff2d78;
+  --color-accent-alt: #ff6b9d;
+  --color-accent-btn: #e1034d;
+  --color-info-bg: #1b2a4a;
+  --color-info-border: #2d4a7a;
+  --color-info-text: #8ab4f8;
+  --color-info-icon: #4a90e2;
+  --color-severity-high: #ff4d4d;
+  --color-severity-medium: #f5a623;
+  --color-severity-low: #3fb950;
+  --color-tag-intention: #a78bfa;
+  --color-tag-answer: #3fb950;
+
+  /* ── Font Family ───────────────────────────────────── */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* ── Base Resets ──────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  background-color: var(--color-page);
+  color: var(--color-txt);
+  font-family: var(--font-sans);
+}
+
+/* Hide scrollbar (webkit) */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Roadmap Timeline (requires pseudo-elements not easily done with utilities) */
+.roadmap-list {
+  position: relative;
+}
+.roadmap-list::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-accent), rgba(255, 45, 120, 0.1));
+  border-radius: 1px;
+}
+
+.roadmap-day {
+  position: relative;
+}
+.roadmap-day::before {
+  content: '';
+  position: absolute;
+  left: 21px;
+  top: 1.05rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--color-card);
+  border: 2px solid var(--color-accent);
+}
+
+/* ── OR Divider pseudo-elements */
+.or-divider::before,
+.or-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-border);
+}
