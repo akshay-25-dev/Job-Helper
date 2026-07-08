@@ -259,16 +259,16 @@ const Interview = () => {
                 <div className='flex flex-col md:flex-row w-full bg-white/85 border border-white/60 rounded-3xl justify-between shadow-[0_12px_45px_rgba(0,0,0,0.04)] backdrop-blur-md overflow-hidden min-h-[620px]'>
 
                     {/* ── Left Nav (Glass Dashboard Sidebar) ── */}
-                    <nav className='w-full md:w-[260px] shrink-0 py-8 px-5 flex flex-col justify-between gap-8 border-r border-gray-150 bg-[#fafafa]/40'>
+                    <nav className='w-full md:w-[260px] shrink-0 py-8 px-6 flex flex-col justify-between gap-8 border-r border-gray-150 bg-[#fafafa]/40'>
                         <div className="flex flex-col gap-1.5">
-                            <p className='text-[0.68rem] font-bold uppercase tracking-widest text-gray-400 px-3 mb-3'>Sections</p>
+                            <p className='text-[0.68rem] font-bold uppercase tracking-widest text-gray-400 px-4 mb-3'>Sections</p>
                             {NAV_ITEMS.map(item => (
                                 <button
                                     key={item.id}
-                                    className={`flex items-center gap-3.5 w-full py-3.5 px-4 bg-transparent border border-transparent rounded-2xl font-sans text-sm font-bold cursor-pointer text-left transition-all duration-150
+                                    className={`flex items-center gap-3.5 w-full py-3.5 px-4 border rounded-2xl font-sans text-sm font-bold cursor-pointer text-left transition-all duration-150
                                         ${activeNav === item.id
-                                            ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/20'
-                                            : 'text-gray-500 hover:bg-orange-50/50 hover:text-gray-900'
+                                            ? 'bg-orange-500 text-white border-transparent shadow-lg shadow-orange-500/20'
+                                            : 'bg-transparent border-transparent text-gray-500 hover:bg-orange-50/50 hover:text-gray-900'
                                         }`}
                                     onClick={() => setActiveNav(item.id)}
                                 >
