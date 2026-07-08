@@ -61,19 +61,23 @@ export const useInterview = () => {
 
     const getResumePdf = async (interviewReportId) => {
         setLoading(true)
-        let response = null
         try {
-            response = await generateResumePdf({ interviewReportId })
-            const url = window.URL.createObjectURL(new Blob([ response ], { type: "application/pdf" }))
-            const link = document.createElement("a")
-            link.href = url
-            link.setAttribute("download", `resume_${interviewReportId}.pdf`)
-            document.body.appendChild(link)
-            link.click()
+            const data = await generateResumePdf({ interviewReportId })
+            const printWindow = window.open("", "_blank")
+            if (printWindow) {
+                printWindow.document.open()
+                printWindow.document.write(data.html)
+                const script = printWindow.document.createElement("script")
+                script.innerHTML = "window.onload = () => { window.print(); }"
+                printWindow.document.body.appendChild(script)
+                printWindow.document.close()
+            } else {
+                alert("Please allow popups to download your resume.")
+            }
         }
         catch (error) {
             console.error(error)
-            alert("Failed to generate PDF. Please ensure the backend server has finished building and try again.")
+            alert("Failed to generate resume. Please ensure the backend server has finished building and try again.")
         } finally {
             setLoading(false)
         }
