@@ -72,7 +72,8 @@ export const useInterview = () => {
             link.click()
         }
         catch (error) {
-            console.log(error)
+            console.error(error)
+            alert("Failed to generate PDF. Please ensure the backend server has finished building and try again.")
         } finally {
             setLoading(false)
         }
