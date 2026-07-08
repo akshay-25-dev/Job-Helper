@@ -60,7 +60,7 @@ const Home = () => {
     }
 
     return (
-        <div className='w-full min-h-screen bg-page relative overflow-hidden flex flex-col'>
+        <div className='w-full min-h-screen bg-page relative overflow-hidden flex flex-col items-center'>
 
             {/* Decorative blurs */}
             <div className="absolute -top-32 -left-32 w-96 h-96 bg-emerald-100/50 rounded-full blur-3xl pointer-events-none" />
