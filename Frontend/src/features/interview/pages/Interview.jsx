@@ -116,7 +116,7 @@ const RoadMapCard = ({ day, checkedTasks, onToggleTask }) => {
                             onClick={() => onToggleTask(taskKey)}
                             className={`flex items-start gap-3 p-3 rounded-xl border cursor-pointer select-none transition-all duration-200 
                                 ${isChecked 
-                                    ? 'bg-emerald-50/10 border-emerald-100/50 text-gray-450 line-through' 
+                                    ? 'bg-emerald-50/15 border-emerald-200/50 text-emerald-800 font-semibold' 
                                     : 'bg-[#fafafa] border-transparent hover:bg-gray-50 text-gray-700'
                                 }`}
                         >
@@ -259,9 +259,9 @@ const Interview = () => {
                 <div className='flex flex-col md:flex-row w-full bg-white/85 border border-white/60 rounded-3xl justify-between shadow-[0_12px_45px_rgba(0,0,0,0.04)] backdrop-blur-md overflow-hidden min-h-[620px]'>
 
                     {/* ── Left Nav (Glass Dashboard Sidebar) ── */}
-                    <nav className='w-full md:w-[260px] shrink-0 py-8 px-6 flex flex-col justify-between gap-8 border-r border-gray-150 bg-[#fafafa]/40'>
+                    <nav className='w-full md:w-[230px] shrink-0 py-8 px-4 flex flex-col justify-between gap-8 border-r border-gray-150 bg-[#fafafa]/40'>
                         <div className="flex flex-col gap-1.5">
-                            <p className='text-[0.68rem] font-bold uppercase tracking-widest text-gray-400 px-4 mb-3'>Sections</p>
+                            <p className='text-[0.68rem] font-bold uppercase tracking-widest text-gray-400 px-3 mb-3'>Sections</p>
                             {NAV_ITEMS.map(item => (
                                 <button
                                     key={item.id}
@@ -287,7 +287,7 @@ const Interview = () => {
                     </nav>
 
                     {/* ── Center Content ── */}
-                    <main className='flex-1 py-8 px-8 md:px-10 overflow-y-auto max-h-[calc(100vh-8rem)] pb-20 bg-white/40'>
+                    <main className='flex-1 py-8 px-5 md:px-7 overflow-y-auto max-h-[calc(100vh-8rem)] pb-20 bg-white/40'>
                         
                         {/* Progress Bar Widget */}
                         <div className="mb-8 p-5 bg-[#fafafa] border border-gray-150 rounded-2xl flex flex-col gap-2.5">
@@ -364,7 +364,7 @@ const Interview = () => {
                     </main>
 
                     {/* ── Right Sidebar (Dashboard Widget Panel) ── */}
-                    <aside className='w-full md:w-[290px] shrink-0 py-8 px-6 flex flex-col gap-7 border-l border-gray-150 bg-[#fafafa]/40'>
+                    <aside className='w-full md:w-[260px] shrink-0 py-8 px-4 flex flex-col gap-7 border-l border-gray-150 bg-[#fafafa]/40'>
 
                         {/* Match Score Dashboard Widget */}
                         <div className='flex flex-col gap-4 bg-white border border-gray-150 p-5 rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.01)]'>
